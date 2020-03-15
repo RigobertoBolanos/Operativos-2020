@@ -1,15 +1,16 @@
 ## EJERCICIOS
+
 **1. Mostrar una tabla de procesos que incluya únicamente los nombres de los
    procesos, sus IDs, y si están respondiendo a Windows (la propiedad
    ``Responding`` muestra eso). Haga que la tabla tome el mínimo de espacio
    horizontal, pero no permita que la información se trunque.**
 
-	**R/** Se utilizó el comando para formateo en forma de tabla con parámetros 
+   **R/** Se utilizó el comando para formateo en forma de tabla con parámetros 
 	correspondientes a los atributos especificados, se incorpora el
 	parámetro -Wrap para que no se trunque la información y el parámetro
 	-AutoSize para que las columnas se ajusten a su contenido.
-
-	``Get-Process | ft Name,ID,Responding -Wrap -AutoSize``
+   
+   ``Get-Process | ft Name,ID,Responding -Wrap -AutoSize``
 
 **2. Muestre una tabla de procesos que incluya los nombres de los procesos y sus
    IDs. También incluya columnas para uso de memoria virtual y física;
@@ -91,14 +92,14 @@
     usuario ``Administrador``, que sean actualizaciones. Si no tiene ninguno,
     busque parches instalados por el usuario ``System``. Note que algunos parches
     no tienen valor en el campo ``Installed By``.**
+    
+   **R/** Se hizo un filtro sobre las propiedades installby y la descripción.
 
-    **R/** Se hizo un filtro sobre las propiedades installby y la descripción.
-
-    ``Get-HotFix | where -filter {$_.InstalledBy -eq 'NT AUTHORITY\SYSTEM' -and $_.Description -match 'Update'}``
+   ``Get-HotFix | where -filter {$_.InstalledBy -eq 'NT AUTHORITY\SYSTEM' -and $_.Description -match 'Update'}``
 
 **12. Genere una lista de todos los procesos que están corriendo con el nombre
     **Conhost** o **Svchost**.**
     
-    **R/** Se hizo un filtro sobre la propiedad nombre.
+   **R/** Se hizo un filtro sobre la propiedad nombre.
 
-    ``Get-Process | where -filter {$_.Name -eq 'Conhost' -or $_.Name -eq 'SvcHost'}``
+   ``Get-Process | where -filter {$_.Name -eq 'Conhost' -or $_.Name -eq 'SvcHost'}``
