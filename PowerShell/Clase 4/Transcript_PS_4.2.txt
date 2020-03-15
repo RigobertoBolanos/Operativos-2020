@@ -1,0 +1,569 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20200313134222
+Nombre de usuario: RIGB-PC\juand
+Usuario RunAs: RIGB-PC\juand
+Nombre de la configuración: 
+Máquina: RIGB-PC (Microsoft Windows NT 10.0.17763.0)
+Aplicación host: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Id. de proceso: 4860
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es Transcript_PS_4.2.txt
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> help *file*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Get-FileHash                      Function  Microsoft.PowerShell.U... Computes the hash valu...
+Import-PowerShellDataFile         Function  Microsoft.PowerShell.U...
+New-TemporaryFile                 Function  Microsoft.PowerShell.U... Creates a temporary file.
+New-PSRoleCapabilityFile          Cmdlet    Microsoft.PowerShell.Core Creates a file that de...
+New-PSSessionConfigurationFile    Cmdlet    Microsoft.PowerShell.Core Creates a file that de...
+Test-PSSessionConfigurationFile   Cmdlet    Microsoft.PowerShell.Core Verifies the keys and ...
+Out-File                          Cmdlet    Microsoft.PowerShell.U... Sends output to a file.
+Unblock-File                      Cmdlet    Microsoft.PowerShell.U... Unblocks files that we...
+New-ScriptFileInfo                Function  PowerShellGet             ...
+Test-ScriptFileInfo               Function  PowerShellGet             ...
+Update-ScriptFileInfo             Function  PowerShellGet             ...
+Get-AppLockerFileInformation      Cmdlet    AppLocker                 Get-AppLockerFileInfor...
+Add-BitsFile                      Cmdlet    BitsTransfer              Add-BitsFile...
+Publish-BCFileContent             Function  BranchCache               ...
+Set-AppXProvisionedDataFile       Cmdlet    Dism                      Set-AppXProvisionedDat...
+Test-FileCatalog                  Cmdlet    Microsoft.PowerShell.S... Test-FileCatalog...
+New-FileCatalog                   Cmdlet    Microsoft.PowerShell.S... New-FileCatalog...
+Get-NetConnectionProfile          Function  NetConnection             ...
+Set-NetConnectionProfile          Function  NetConnection             ...
+Get-NetFirewallProfile            Function  NetSecurity               ...
+Set-NetFirewallProfile            Function  NetSecurity               ...
+Disable-NetIPHttpsProfile         Function  NetworkTransition         ...
+Enable-NetIPHttpsProfile          Function  NetworkTransition         ...
+Get-SmbOpenFile                   Function  SmbShare                  ...
+Close-SmbOpenFile                 Function  SmbShare                  ...
+Remove-StorageFileServer          Function  Storage                   ...
+Get-SupportedFileSystems          Function  Storage                   ...
+Get-FileIntegrity                 Function  Storage                   ...
+Get-FileShareAccessControlEntry   Function  Storage                   ...
+Get-FileShare                     Function  Storage                   ...
+Clear-FileStorageTier             Function  Storage                   ...
+Remove-FileShare                  Function  Storage                   ...
+Block-FileShareAccess             Function  Storage                   ...
+Get-FileStorageTier               Function  Storage                   ...
+Revoke-FileShareAccess            Function  Storage                   ...
+Get-StorageFileServer             Function  Storage                   ...
+New-StorageFileServer             Function  Storage                   ...
+Set-FileStorageTier               Function  Storage                   ...
+Set-FileIntegrity                 Function  Storage                   ...
+New-FileShare                     Function  Storage                   ...
+Unblock-FileShareAccess           Function  Storage                   ...
+Set-StorageFileServer             Function  Storage                   ...
+Grant-FileShareAccess             Function  Storage                   ...
+Set-FileShare                     Function  Storage                   ...
+Repair-FileIntegrity              Function  Storage                   ...
+Debug-FileShare                   Function  Storage                   ...
+Set-StorageBusProfile             Function  StorageBusCache           ...
+Set-UevTemplateProfile            Cmdlet    UEV                       Set-UevTemplateProfile...
+FileSystem                        Provider  Microsoft.PowerShell.Core Provides access to fil...
+about_Profiles                    HelpFile                            Describes how to creat...
+about_Session_Configuration_Files HelpFile                            Describes session conf...
+
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows
+
+
+    Directorio: C:\Windows
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----     15/09/2018  2:33 a. m.                addins
+d-----      2/10/2019  8:35 a. m.                appcompat
+d-----    13/03/2020  12:07 a. m.                apppatch
+d-----     13/03/2020  7:03 a. m.                AppReadiness
+d-r---     18/11/2019  9:01 a. m.                assembly
+d-----    13/03/2020  12:07 a. m.                bcastdvr
+d-----     15/09/2018  2:33 a. m.                Boot
+d-----     15/09/2018  2:33 a. m.                Branding
+d-----    11/03/2020  10:40 a. m.                CbsTemp
+d-----     15/09/2018  2:33 a. m.                Containers
+d-----      5/07/2019  3:55 p. m.                CSC
+d-----     15/09/2018  2:33 a. m.                Cursors
+d-----     19/09/2018  1:11 p. m.                debug
+d-----     15/09/2018  2:33 a. m.                diagnostics
+d-----     15/09/2018  4:08 a. m.                DigitalLocker
+d---s-     15/09/2018  2:33 a. m.                Downloaded Program Files
+d-----     15/09/2018  4:08 a. m.                en-US
+d-----     29/09/2019  3:53 p. m.                es-ES
+d-----      5/07/2019  4:46 p. m.                es-MX
+d-----     5/07/2019  12:35 a. m.                Favicon_ICON
+d-r-s-      1/10/2019  2:41 p. m.                Fonts
+d-----     15/09/2018  2:33 a. m.                GameBarPresenceWriter
+d-----     15/09/2018  2:33 a. m.                Globalization
+d-----     15/09/2018  4:08 a. m.                Help
+d-----     15/09/2018  2:33 a. m.                IdentityCRL
+d-----     29/09/2019  3:53 p. m.                IME
+d-r---    13/03/2020  12:07 a. m.                ImmersiveControlPanel
+d-----     13/03/2020  7:05 a. m.                INF
+d-----     15/09/2018  2:33 a. m.                InputMethod
+d-----     15/09/2018  2:33 a. m.                L2Schemas
+d-----     12/03/2020  7:30 a. m.                Lenovo
+d-----    17/12/2019  10:32 a. m.                LiveKernelReports
+d-----     11/03/2020  8:03 p. m.                Logs
+d-r-s-      5/07/2019  4:18 p. m.                media
+d-r---     13/03/2020  7:01 a. m.                Microsoft.NET
+d-----     15/09/2018  2:33 a. m.                Migration
+d-----     15/09/2018  2:33 a. m.                ModemLogs
+d-----     8/10/2019  10:38 p. m.                OCR
+d-r---     15/09/2018  2:33 a. m.                Offline Web Pages
+d-----     28/09/2019  2:05 p. m.                Panther
+d-----     15/09/2018  2:33 a. m.                Performance
+d-----     15/09/2018  2:33 a. m.                PLA
+d-----    12/02/2020  10:44 p. m.                PolicyDefinitions
+d-----    13/03/2020  12:43 p. m.                Prefetch
+d-r---    13/03/2020  12:07 a. m.                PrintDialog
+d-----      1/10/2019  2:41 p. m.                Provisioning
+d-----     15/09/2018  2:33 a. m.                Registration
+d-----      5/07/2019  4:45 p. m.                RemotePackages
+d-----     15/09/2018  2:33 a. m.                rescache
+d-----     15/09/2018  2:33 a. m.                Resources
+d-----     15/09/2018  2:33 a. m.                SchCache
+d-----      5/07/2019  4:45 p. m.                schemas
+d-----      5/07/2019  4:45 p. m.                security
+d-----     19/09/2018  1:10 p. m.                ServiceProfiles
+d-----     17/10/2019  7:50 p. m.                ServiceState
+d-----    13/03/2020  12:07 a. m.                servicing
+d-----     15/09/2018  2:36 a. m.                Setup
+d-----    13/03/2020  12:07 a. m.                ShellComponents
+d-----    13/03/2020  12:07 a. m.                ShellExperiences
+d-----     15/09/2018  2:33 a. m.                SKB
+d-----      5/07/2019  4:06 p. m.                SoftwareDistribution
+d-----     15/09/2018  2:33 a. m.                Speech
+d-----     15/09/2018  2:33 a. m.                Speech_OneCore
+d-----     15/09/2018  2:33 a. m.                System
+d-----     13/03/2020  7:05 a. m.                System32
+d-----      5/07/2019  4:45 p. m.                SystemApps
+d-----     15/09/2018  4:11 a. m.                SystemResources
+d-----    13/03/2020  12:07 a. m.                SysWOW64
+d-----     15/09/2018  2:33 a. m.                TAPI
+d-----     13/03/2020  7:01 a. m.                Tasks
+d-----     13/03/2020  1:09 p. m.                Temp
+d-----     25/12/2019  9:55 p. m.                TempInst
+d-----      1/10/2019  2:41 p. m.                TextInput
+d-----     15/09/2018  2:33 a. m.                tracing
+d-----     15/09/2018  2:34 a. m.                twain_32
+d-----     15/09/2018  2:33 a. m.                Vss
+d-----     15/09/2018  2:33 a. m.                WaaS
+d-----     15/09/2018  2:33 a. m.                Web
+d-----     13/03/2020  7:01 a. m.                WinSxS
+-a----     15/09/2018  2:28 a. m.          78848 bfsvc.exe
+-a--s-     13/03/2020  1:47 p. m.          67584 bootstat.dat
+-a----      5/07/2019  4:49 p. m.         773632 ca-ES.log
+-a----      5/07/2019  4:23 p. m.           1284 comsetup.log
+-a----     15/09/2018  2:28 a. m.          33951 Core.xml
+-a----     15/09/2018  2:28 a. m.          33951 CoreSingleLanguage.xml
+-a----     5/07/2019  12:30 a. m.             12 csup.txt
+-a----      5/07/2019  4:26 p. m.          22863 diagerr.xml
+-a----      5/07/2019  4:26 p. m.          22863 diagwrn.xml
+-a----     25/12/2019  9:55 p. m.         102572 DPINST.LOG
+-a----      5/07/2019  4:26 p. m.           7129 DtcInstall.log
+-a----      5/07/2019  4:48 p. m.         200852 en-us.log
+-a----      5/07/2019  4:49 p. m.        8683515 es-es.log
+-a----      5/07/2019  4:48 p. m.       11017029 es-MX.log
+-a----      5/07/2019  4:49 p. m.         547154 eu-ES.log
+-a----    11/03/2020  10:37 a. m.        4417008 explorer.exe
+-a----      5/07/2019  4:49 p. m.         546979 gl-ES.log
+-a----    11/03/2020  10:38 a. m.        1071616 HelpPane.exe
+-a----     15/09/2018  2:29 a. m.          18432 hh.exe
+-a----     19/09/2018  1:10 p. m.           1378 lsasetup.log
+-a----      5/07/2019  4:22 p. m.           9726 machineinfo.sav
+-a----     15/09/2018  2:28 a. m.          43131 mib.bin
+-a----     1/10/2019  10:52 a. m.         254464 notepad.exe
+-a----     13/03/2020  7:00 a. m.         982206 PFRO.log
+-a----      5/07/2019  5:27 p. m.          16732 PLDDATA.XML
+-a----     15/09/2018  2:28 a. m.          34925 Professional.xml
+-a----      5/07/2019  4:50 p. m.         358400 regedit.exe
+-a----    16/04/2019  12:13 p. m.        2856624 RtlExUpd.dll
+-a----     26/02/2020  4:13 p. m.           1986 setupact.log
+-a----     19/09/2018  1:10 p. m.              0 setuperr.log
+-a----     13/11/2019  7:35 p. m.         132608 splwow64.exe
+-a----      5/07/2019  5:27 p. m.             27 SSW0H65098.SSW0S87805
+-a----    16/12/2019  10:29 p. m.            606 Synaptics.log
+-a----    16/12/2019  10:29 p. m.           2424 Synaptics.PD.log
+-a----      5/07/2019  5:27 p. m.            112 SYSINFO.TXT
+-a----     15/09/2018  2:31 a. m.            219 system.ini
+-a----     15/09/2018  2:29 a. m.          64512 twain_32.dll
+-a----     15/09/2018  2:31 a. m.             92 win.ini
+-a----     13/03/2020  1:04 p. m.            276 WindowsUpdate.log
+-a----     15/09/2018  2:29 a. m.          11776 winhlp32.exe
+-a----      5/07/2019  4:16 p. m.          39054 WinREDism.log
+-a----     15/09/2018  4:11 a. m.         316640 WMSysPr9.prx
+-a----     15/09/2018  2:29 a. m.          11264 write.exe
+
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe | gm
+
+
+   TypeName: System.String
+
+Name             MemberType            Definition
+----             ----------            ----------
+Clone            Method                System.Object Clone(), System.Object ICloneable.Clone()
+CompareTo        Method                int CompareTo(System.Object value), int CompareTo(str...
+Contains         Method                bool Contains(string value)
+CopyTo           Method                void CopyTo(int sourceIndex, char[] destination, int ...
+EndsWith         Method                bool EndsWith(string value), bool EndsWith(string val...
+Equals           Method                bool Equals(System.Object obj), bool Equals(string va...
+GetEnumerator    Method                System.CharEnumerator GetEnumerator(), System.Collect...
+GetHashCode      Method                int GetHashCode()
+GetType          Method                type GetType()
+GetTypeCode      Method                System.TypeCode GetTypeCode(), System.TypeCode IConve...
+IndexOf          Method                int IndexOf(char value), int IndexOf(char value, int ...
+IndexOfAny       Method                int IndexOfAny(char[] anyOf), int IndexOfAny(char[] a...
+Insert           Method                string Insert(int startIndex, string value)
+IsNormalized     Method                bool IsNormalized(), bool IsNormalized(System.Text.No...
+LastIndexOf      Method                int LastIndexOf(char value), int LastIndexOf(char val...
+LastIndexOfAny   Method                int LastIndexOfAny(char[] anyOf), int LastIndexOfAny(...
+Normalize        Method                string Normalize(), string Normalize(System.Text.Norm...
+PadLeft          Method                string PadLeft(int totalWidth), string PadLeft(int to...
+PadRight         Method                string PadRight(int totalWidth), string PadRight(int ...
+Remove           Method                string Remove(int startIndex, int count), string Remo...
+Replace          Method                string Replace(char oldChar, char newChar), string Re...
+Split            Method                string[] Split(Params char[] separator), string[] Spl...
+StartsWith       Method                bool StartsWith(string value), bool StartsWith(string...
+Substring        Method                string Substring(int startIndex), string Substring(in...
+ToBoolean        Method                bool IConvertible.ToBoolean(System.IFormatProvider pr...
+ToByte           Method                byte IConvertible.ToByte(System.IFormatProvider provi...
+ToChar           Method                char IConvertible.ToChar(System.IFormatProvider provi...
+ToCharArray      Method                char[] ToCharArray(), char[] ToCharArray(int startInd...
+ToDateTime       Method                datetime IConvertible.ToDateTime(System.IFormatProvid...
+ToDecimal        Method                decimal IConvertible.ToDecimal(System.IFormatProvider...
+ToDouble         Method                double IConvertible.ToDouble(System.IFormatProvider p...
+ToInt16          Method                int16 IConvertible.ToInt16(System.IFormatProvider pro...
+ToInt32          Method                int IConvertible.ToInt32(System.IFormatProvider provi...
+ToInt64          Method                long IConvertible.ToInt64(System.IFormatProvider prov...
+ToLower          Method                string ToLower(), string ToLower(cultureinfo culture)
+ToLowerInvariant Method                string ToLowerInvariant()
+ToSByte          Method                sbyte IConvertible.ToSByte(System.IFormatProvider pro...
+ToSingle         Method                float IConvertible.ToSingle(System.IFormatProvider pr...
+ToString         Method                string ToString(), string ToString(System.IFormatProv...
+ToType           Method                System.Object IConvertible.ToType(type conversionType...
+ToUInt16         Method                uint16 IConvertible.ToUInt16(System.IFormatProvider p...
+ToUInt32         Method                uint32 IConvertible.ToUInt32(System.IFormatProvider p...
+ToUInt64         Method                uint64 IConvertible.ToUInt64(System.IFormatProvider p...
+ToUpper          Method                string ToUpper(), string ToUpper(cultureinfo culture)
+ToUpperInvariant Method                string ToUpperInvariant()
+Trim             Method                string Trim(Params char[] trimChars), string Trim()
+TrimEnd          Method                string TrimEnd(Params char[] trimChars)
+TrimStart        Method                string TrimStart(Params char[] trimChars)
+PSChildName      NoteProperty          string PSChildName=bfsvc.exe
+PSDrive          NoteProperty          PSDriveInfo PSDrive=C
+PSIsContainer    NoteProperty          bool PSIsContainer=False
+PSParentPath     NoteProperty          string PSParentPath=Microsoft.PowerShell.Core\FileSys...
+PSPath           NoteProperty          string PSPath=Microsoft.PowerShell.Core\FileSystem::C...
+PSProvider       NoteProperty          ProviderInfo PSProvider=Microsoft.PowerShell.Core\Fil...
+Chars            ParameterizedProperty char Chars(int index) {get;}
+Length           Property              int Length {get;}
+
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -File
+
+
+    Directorio: C:\Windows
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----     15/09/2018  2:28 a. m.          78848 bfsvc.exe
+-a--s-     13/03/2020  1:52 p. m.          67584 bootstat.dat
+-a----      5/07/2019  4:49 p. m.         773632 ca-ES.log
+-a----      5/07/2019  4:23 p. m.           1284 comsetup.log
+-a----     15/09/2018  2:28 a. m.          33951 Core.xml
+-a----     15/09/2018  2:28 a. m.          33951 CoreSingleLanguage.xml
+-a----     5/07/2019  12:30 a. m.             12 csup.txt
+-a----      5/07/2019  4:26 p. m.          22863 diagerr.xml
+-a----      5/07/2019  4:26 p. m.          22863 diagwrn.xml
+-a----     25/12/2019  9:55 p. m.         102572 DPINST.LOG
+-a----      5/07/2019  4:26 p. m.           7129 DtcInstall.log
+-a----      5/07/2019  4:48 p. m.         200852 en-us.log
+-a----      5/07/2019  4:49 p. m.        8683515 es-es.log
+-a----      5/07/2019  4:48 p. m.       11017029 es-MX.log
+-a----      5/07/2019  4:49 p. m.         547154 eu-ES.log
+-a----    11/03/2020  10:37 a. m.        4417008 explorer.exe
+-a----      5/07/2019  4:49 p. m.         546979 gl-ES.log
+-a----    11/03/2020  10:38 a. m.        1071616 HelpPane.exe
+-a----     15/09/2018  2:29 a. m.          18432 hh.exe
+-a----     19/09/2018  1:10 p. m.           1378 lsasetup.log
+-a----      5/07/2019  4:22 p. m.           9726 machineinfo.sav
+-a----     15/09/2018  2:28 a. m.          43131 mib.bin
+-a----     1/10/2019  10:52 a. m.         254464 notepad.exe
+-a----     13/03/2020  7:00 a. m.         982206 PFRO.log
+-a----      5/07/2019  5:27 p. m.          16732 PLDDATA.XML
+-a----     15/09/2018  2:28 a. m.          34925 Professional.xml
+-a----      5/07/2019  4:50 p. m.         358400 regedit.exe
+-a----    16/04/2019  12:13 p. m.        2856624 RtlExUpd.dll
+-a----     26/02/2020  4:13 p. m.           1986 setupact.log
+-a----     19/09/2018  1:10 p. m.              0 setuperr.log
+-a----     13/11/2019  7:35 p. m.         132608 splwow64.exe
+-a----      5/07/2019  5:27 p. m.             27 SSW0H65098.SSW0S87805
+-a----    16/12/2019  10:29 p. m.            606 Synaptics.log
+-a----    16/12/2019  10:29 p. m.           2424 Synaptics.PD.log
+-a----      5/07/2019  5:27 p. m.            112 SYSINFO.TXT
+-a----     15/09/2018  2:31 a. m.            219 system.ini
+-a----     15/09/2018  2:29 a. m.          64512 twain_32.dll
+-a----     15/09/2018  2:31 a. m.             92 win.ini
+-a----     13/03/2020  1:04 p. m.            276 WindowsUpdate.log
+-a----     15/09/2018  2:29 a. m.          11776 winhlp32.exe
+-a----      5/07/2019  4:16 p. m.          39054 WinREDism.log
+-a----     15/09/2018  4:11 a. m.         316640 WMSysPr9.prx
+-a----     15/09/2018  2:29 a. m.          11264 write.exe
+
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -File -Attributes
+>> ErrorTerminación(Get-ChildItem): "Falta un argumento para el parámetro 'Attributes'. Especifique un parámetro del tipo 'System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]' e inténtelo de nuevo."
+Get-ChildItem : Falta un argumento para el parámetro 'Attributes'. Especifique un parámetro del tipo 
+'System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]' e inténtelo de nuevo.
+En línea: 1 Carácter: 28
++ dir -Path C:\Windows -File -Attributes
++                            ~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.GetChildItemCommand
+Get-ChildItem : Falta un argumento para el parámetro 'Attributes'. Especifique un parámetro
+del tipo 'System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]' e
+inténtelo de nuevo.
+En línea: 1 Carácter: 28
++ dir -Path C:\Windows -File -Attributes
++                            ~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.GetChildItemComman
+   d
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -File | select -First
+>> ErrorTerminación(Select-Object): "Falta un argumento para el parámetro 'First'. Especifique un parámetro del tipo 'System.Int32' e inténtelo de nuevo."
+Select-Object : Falta un argumento para el parámetro 'First'. Especifique un parámetro del tipo 'System.Int32' e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 37
++ dir -Path C:\Windows -File | select -First
++                                     ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-Object], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.SelectObjectCommand
+Select-Object : Falta un argumento para el parámetro 'First'. Especifique un parámetro del
+tipo 'System.Int32' e inténtelo de nuevo.
+En línea: 1 Carácter: 37
++ dir -Path C:\Windows -File | select -First
++                                     ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-Object], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.SelectObjectComman
+   d
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe | select -First
+>> ErrorTerminación(Select-Object): "Falta un argumento para el parámetro 'First'. Especifique un parámetro del tipo 'System.Int32' e inténtelo de nuevo."
+Select-Object : Falta un argumento para el parámetro 'First'. Especifique un parámetro del tipo 'System.Int32' e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 43
++ dir -Path C:\Windows -Name *.exe | select -First
++                                           ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-Object], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.SelectObjectCommand
+Select-Object : Falta un argumento para el parámetro 'First'. Especifique un parámetro del
+tipo 'System.Int32' e inténtelo de nuevo.
+En línea: 1 Carácter: 43
++ dir -Path C:\Windows -Name *.exe | select -First
++                                           ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-Object], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.SelectObjectComman
+   d
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe
+hh.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe | gm
+
+
+   TypeName: System.String
+
+Name             MemberType            Definition
+----             ----------            ----------
+Clone            Method                System.Object Clone(), System.Object ICloneable.Clone()
+CompareTo        Method                int CompareTo(System.Object value), int CompareTo(str...
+Contains         Method                bool Contains(string value)
+CopyTo           Method                void CopyTo(int sourceIndex, char[] destination, int ...
+EndsWith         Method                bool EndsWith(string value), bool EndsWith(string val...
+Equals           Method                bool Equals(System.Object obj), bool Equals(string va...
+GetEnumerator    Method                System.CharEnumerator GetEnumerator(), System.Collect...
+GetHashCode      Method                int GetHashCode()
+GetType          Method                type GetType()
+GetTypeCode      Method                System.TypeCode GetTypeCode(), System.TypeCode IConve...
+IndexOf          Method                int IndexOf(char value), int IndexOf(char value, int ...
+IndexOfAny       Method                int IndexOfAny(char[] anyOf), int IndexOfAny(char[] a...
+Insert           Method                string Insert(int startIndex, string value)
+IsNormalized     Method                bool IsNormalized(), bool IsNormalized(System.Text.No...
+LastIndexOf      Method                int LastIndexOf(char value), int LastIndexOf(char val...
+LastIndexOfAny   Method                int LastIndexOfAny(char[] anyOf), int LastIndexOfAny(...
+Normalize        Method                string Normalize(), string Normalize(System.Text.Norm...
+PadLeft          Method                string PadLeft(int totalWidth), string PadLeft(int to...
+PadRight         Method                string PadRight(int totalWidth), string PadRight(int ...
+Remove           Method                string Remove(int startIndex, int count), string Remo...
+Replace          Method                string Replace(char oldChar, char newChar), string Re...
+Split            Method                string[] Split(Params char[] separator), string[] Spl...
+StartsWith       Method                bool StartsWith(string value), bool StartsWith(string...
+Substring        Method                string Substring(int startIndex), string Substring(in...
+ToBoolean        Method                bool IConvertible.ToBoolean(System.IFormatProvider pr...
+ToByte           Method                byte IConvertible.ToByte(System.IFormatProvider provi...
+ToChar           Method                char IConvertible.ToChar(System.IFormatProvider provi...
+ToCharArray      Method                char[] ToCharArray(), char[] ToCharArray(int startInd...
+ToDateTime       Method                datetime IConvertible.ToDateTime(System.IFormatProvid...
+ToDecimal        Method                decimal IConvertible.ToDecimal(System.IFormatProvider...
+ToDouble         Method                double IConvertible.ToDouble(System.IFormatProvider p...
+ToInt16          Method                int16 IConvertible.ToInt16(System.IFormatProvider pro...
+ToInt32          Method                int IConvertible.ToInt32(System.IFormatProvider provi...
+ToInt64          Method                long IConvertible.ToInt64(System.IFormatProvider prov...
+ToLower          Method                string ToLower(), string ToLower(cultureinfo culture)
+ToLowerInvariant Method                string ToLowerInvariant()
+ToSByte          Method                sbyte IConvertible.ToSByte(System.IFormatProvider pro...
+ToSingle         Method                float IConvertible.ToSingle(System.IFormatProvider pr...
+ToString         Method                string ToString(), string ToString(System.IFormatProv...
+ToType           Method                System.Object IConvertible.ToType(type conversionType...
+ToUInt16         Method                uint16 IConvertible.ToUInt16(System.IFormatProvider p...
+ToUInt32         Method                uint32 IConvertible.ToUInt32(System.IFormatProvider p...
+ToUInt64         Method                uint64 IConvertible.ToUInt64(System.IFormatProvider p...
+ToUpper          Method                string ToUpper(), string ToUpper(cultureinfo culture)
+ToUpperInvariant Method                string ToUpperInvariant()
+Trim             Method                string Trim(Params char[] trimChars), string Trim()
+TrimEnd          Method                string TrimEnd(Params char[] trimChars)
+TrimStart        Method                string TrimStart(Params char[] trimChars)
+PSChildName      NoteProperty          string PSChildName=hh.exe
+PSDrive          NoteProperty          PSDriveInfo PSDrive=C
+PSIsContainer    NoteProperty          bool PSIsContainer=False
+PSParentPath     NoteProperty          string PSParentPath=Microsoft.PowerShell.Core\FileSys...
+PSPath           NoteProperty          string PSPath=Microsoft.PowerShell.Core\FileSystem::C...
+PSProvider       NoteProperty          ProviderInfo PSProvider=Microsoft.PowerShell.Core\Fil...
+Chars            ParameterizedProperty char Chars(int index) {get;}
+Length           Property              int Length {get;}
+
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe | gm -Name *version*
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe | gm -Name *ver*
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe | .VersionInfo
+.VersionInfo : El término '.VersionInfo' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es 
+correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 37
++ dir -Path C:\Windows -Name hh.exe | .VersionInfo
++                                     ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.VersionInfo:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+.VersionInfo : El término '.VersionInfo' no se reconoce como nombre de un cmdlet, función,
+archivo de script o programa ejecutable. Compruebe si escribió correctamente el nombre o, si
+incluyó una ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 37
++ dir -Path C:\Windows -Name hh.exe | .VersionInfo
++                                     ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.VersionInfo:String) [], CommandNotFoundExcepti
+   on
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe > (ls.exe).VersionInfo
+ls.exe : El término 'ls.exe' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. 
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 38
++ dir -Path C:\Windows -Name hh.exe > (ls.exe).VersionInfo
++                                      ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ls.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ls.exe : El término 'ls.exe' no se reconoce como nombre de un cmdlet, función, archivo de
+script o programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una
+ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 38
++ dir -Path C:\Windows -Name hh.exe > (ls.exe).VersionInfo
++                                      ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ls.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name hh.exe | (ls.exe).VersionInfo
+En línea: 1 Carácter: 37
++ dir -Path C:\Windows -Name hh.exe | (ls.exe).VersionInfo
++                                     ~~~~~~~~~~~~~~~~~~~~
+Las expresiones solo se permiten como primer elemento de las canalizaciones.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpressionsMustBeFirstInPipeline
+
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe*
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *.exe* | fl Name, VersionInfo, @{n='Tamaño';e={$_.length}}
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *exe* | fl Name, VersionInfo, @{n='Tamaño';e={$_.length}}
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+PS C:\Users\juand\OneDrive\Documentos\GitHub\Operativos-2020\PowerShell\Clase 4> dir -Path C:\Windows -Name *exe* | fl -Property  *
+bfsvc.exe
+explorer.exe
+HelpPane.exe
+hh.exe
+notepad.exe
+regedit.exe
+splwow64.exe
+winhlp32.exe
+write.exe
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20200313225725
+**********************
