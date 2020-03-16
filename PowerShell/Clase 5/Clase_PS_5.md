@@ -3,7 +3,7 @@
    de red? ¿Posee dicha clase algún método para liberar un préstamo de
    dirección (lease) DHCP?**
 
-   **R** La clase win32_NetworkAdapterConfiguration puede emplearse para consultar la IP de un adaptador mediante la propiedad IPAddres.
+   **R/** La clase win32_NetworkAdapterConfiguration puede emplearse para consultar la IP de un adaptador mediante la propiedad IPAddres.
 
    ``Get-CimInstance -ClassName win32_NetworkAdapterConfiguration | ft ServiceName, IPAddress``
 
@@ -20,7 +20,7 @@
    parches con el nombre **quick-fix engineering**). Es diferente el listado al
    que produce el cmdlet ``Get-Hotfix``?**
 
-   **R/**Para obtener la lita con los parches con el nombre especificado se utilizó.
+   **R/** Para obtener la lita con los parches con el nombre especificado se utilizó.
 
    ``Get-WmiObject -List | where name -Like '*fix*' | ft -Property *``
 
