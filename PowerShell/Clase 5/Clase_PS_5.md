@@ -54,6 +54,6 @@
 
     Se trato de encontrar igualmente productos antivirus instalados con el comando:
 
-    ``Get-CimClass -Namespace root\CIMv2 | where cimclassname -Like '*antivirus*'``
+   ``Get-CimClass -Namespace root\CIMv2 | where cimclassname -Like '*antivirus*'``
 
     Sin embargo no hubo resultado, concluyo igualmente que no hay instalado un antivirus en mi equipo
